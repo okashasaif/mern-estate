@@ -5,7 +5,7 @@ import About from './pages/About';
 import Profile from './pages/Signin';
 import Signin from "./pages/Signin";
 import Header from "./Components/Header";
-import Signout from "./pages/Signout";
+import Signup from "./pages/SignUp";
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="About" element={<About/>}/>
         <Route path="Profile" element={<Profile/>}/>
         <Route path="Signin" element={<Signin/>}/>
-        <Route path="Signout" element={<Signout/>}/>
+        <Route path="Signup" element={<Signup/>}/>
       </Routes>
       
     </BrowserRouter>
