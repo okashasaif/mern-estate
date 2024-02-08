@@ -2,11 +2,7 @@ import React from 'react';
 import { getStorage, uploadBytesResumable, ref, getDownloadURL } from 'firebase/storage';
 import { useState } from 'react';
 import { app } from '../firebase';
-
-
 const CreateListing = () => {
-
-
     const [files, setFiles] = useState([])
     const [formData, setFormData]= useState({
         imageUrls: [],
@@ -19,7 +15,6 @@ const CreateListing = () => {
             setUploading(true);
             setImageUploadError(false);
             const promises =[];
-
             for (let i=0; i<files.length; i++){
                 promises.push(storeImage(files[i]));
             }
@@ -32,15 +27,11 @@ const CreateListing = () => {
                 setImageUploadError('image upload failed (2mb per image)');
                 setUploading(false);
             });
-            
-
         }else{
             setImageUploadError('you can only upload 6 six images');
             setUploading(false);
         }
     };
-
-
     const storeImage = async (file) => {
         return new Promise((resolve, reject) => {
           const storage = getStorage(app);
@@ -62,19 +53,16 @@ const CreateListing = () => {
                     resolve(downloadURL);
                 });
             }
-
             );
         });
     };
-
     const handleRemoveImage = (index)=>{
         setFormData ({
             ...formData,
             imageUrls: formData.imageUrls.filter((_,i)=> i !==index),
         });
     }
-
-    return (
+return (
 <main className='p-3 max-w-4xl mx-auto'>
     <h1 className='text-3xl font-semibold text-center my-7 '>Create a listing</h1>
     <form className='flex flex-col sm:flex-row gap-4'>
@@ -82,7 +70,6 @@ const CreateListing = () => {
             <input type="text" placeholder='name' className='border p-3 rounded-lg' id='name' maxLength='62' minLength='10' required />
             <input type="text" placeholder='Description' className='border p-3 rounded-lg' id='description'  required />
             <input type="text" placeholder='Address' className='border p-3 rounded-lg' id='address' required />
-
             <div className='flex gap-6 flex-wrap'>
                 <div className='flex gap-2'>
                 <input type="checkbox"  id="sale" className='w-5' />
@@ -105,7 +92,6 @@ const CreateListing = () => {
                 <span>Offer</span>
                 </div>
             </div>
-
             <div className='flex flex-wrap gap-6'>
                 <div className='flex items-center gap-2'>
                     <input type="number" name="" id="bedrooms" min='1' max='10' className='p-3 border border-gray-300 rounded-lg ' required/>
@@ -129,18 +115,14 @@ const CreateListing = () => {
                     </div>
                 </div>
             </div>
-
         </div>
         <div className='flex flex-col flex-1 gap-4'>
             <p className='font-semibold '>Images:
             <span className='font-normal text-gray-600 ml-2'>The first image will be cover (max-6)</span></p>
-
-
             <div className="flex gap-4"><input onChange={(e)=>setFiles(e.target.files)} type="file" name="" id="images" accept='image/*'className='p-3 border-gray-300 rounded w-full' multiple/>
             <button type='button'
               onClick={handleImageSubmit} disabled={uploading} className='p-3 text-green-700 border border-green-700
             rounded uppercase hover:shadow-lg disabled:opacity-80'>{ uploading ? 'uploading......': 'upload'}</button>
-          
             </div>
             <p className='text-red-700 text-sm'>
         {
@@ -157,10 +139,8 @@ const CreateListing = () => {
       }
             <button className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:80'>Create Listings</button>
         </div>
-    
     </form>
 </main>
     );
 }
-
 export default CreateListing;
