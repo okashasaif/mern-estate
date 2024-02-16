@@ -6,7 +6,8 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAl_FI32mkpjZytBRxTfZkvwyQHbMnIOuU",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  // apiKey: "AIzaSyAl_FI32mkpjZytBRxTfZkvwyQHbMnIOuU",
   authDomain: "mernestate-cfe13.firebaseapp.com",
   projectId: "mernestate-cfe13",
   storageBucket: "mernestate-cfe13.appspot.com",
