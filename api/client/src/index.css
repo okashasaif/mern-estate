@@ -3,5 +3,23 @@
 @tailwind utilities;
 
 body{
-    background-color: rgb(241, 245,241);
+    background-color: rgb(237, 237, 237);
 }
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-track{
+    background: rgb(255, 255, 255);
+}
+::-webkit-scrollbar-thumb{
+    background: #2D3748;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(0, 0, 0);
+}
+/* styles.css */
+::selection {
+    background-color: #a097748f; /* Change this to your desired highlight color */
+  }
+  

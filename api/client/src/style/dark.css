@@ -1,0 +1,55 @@
+.dark {
+  background-color: #111;
+  color: rgb(156, 156, 156);
+}
+.dark .chartGrid {
+  stroke: rgba(228, 228, 228, 0.219);
+}
+.dark .table {
+  background-color: #111;
+}
+.dark .table .tableCell {
+  color: gray;
+}
+.dark .navbar {
+  color: #999;
+  border-color: #333;
+}
+.dark .navbar .search2 {
+  border: 1px solid rgb(146, 0, 0);
+  background-color: rgb(0, 0, 0);
+  color: #a394d8;
+}
+.dark .sidebar {
+  background-color: #111;
+  border-color: #333;
+}
+.dark .sidebar .top .logo {
+  color: #7451f8;
+}
+.dark .sidebar hr {
+  border-color: #333;
+}
+.dark .sidebar ul li:hover {
+  background-color: #333;
+}
+.dark .sidebar ul li .icon {
+  color: #7451f8;
+}
+.dark .datatable .datagrid {
+  color: gray;
+  border: none;
+}
+.dark .datatable .datagrid .viewButton,
+.dark .datatable .datagrid .deleteButton,
+.dark .datatable .datagrid .cellWithStatus {
+  color: rgb(0, 0, 0);
+  border: none;
+}
+.dark .new input {
+  border: 1px solid rgb(255, 255, 255);
+}
+.dark input {
+  background-color: transparent;
+  color: white;
+}/*# sourceMappingURL=dark.css.map */

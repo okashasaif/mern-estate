@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -6,9 +5,21 @@ import {
   signInSuccess,
   signInFailure,
 } from '../redux/user/userSlice';
-import OAuth from '../Components/OAuth';
+// import OAuth from '../Components/OAuth';
+import { useState, useEffect } from 'react';
+import PreloaderComponent from "../Components/Pre-loader/Pre-loader.jsx";
 
 export default function SignIn() {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
+
   const [formData, setFormData] = useState({});
   const { loading, error } = useSelector((state) => state.user);
   const navigate = useNavigate();
@@ -43,6 +54,11 @@ export default function SignIn() {
     }
   };
   return (
+    <div>
+    {isLoading ? (
+      <PreloaderComponent />
+    ) : (
+      <div>
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
@@ -67,7 +83,7 @@ export default function SignIn() {
         >
           {loading ? 'Loading...' : 'Sign In'}
         </button>
-        <OAuth/>
+        {/* <OAuth/> */}
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Dont have an account?</p>
@@ -77,5 +93,10 @@ export default function SignIn() {
       </div>
       {error && <p className='text-red-500 mt-5'>{error}</p>}
     </div>
+      </div>
+    )}
+  </div>
+
+
   );
 }

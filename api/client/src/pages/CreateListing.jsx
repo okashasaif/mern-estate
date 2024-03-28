@@ -1,15 +1,37 @@
+import Navbar from "../Components/Navbar/Header.jsx"
+import Sidebar from "../Components/Sidebar/Sidebar.jsx";
+import "../pages/list/list.scss"
 import { useState } from 'react';
+import React, { useEffect } from 'react';
+
+import PreloaderComponent from '../Components/Pre-loader/Pre-loader.jsx';
 import {
   getDownloadURL,
   getStorage,
   ref,
   uploadBytesResumable,
 } from 'firebase/storage';
-import { app } from '../firebase';
+// import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 export default function CreateListing() {
+//pre loader
+
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
+
+ 
+
+
+
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const [files, setFiles] = useState([]);
@@ -147,13 +169,24 @@ export default function CreateListing() {
       if (data.success === false) {
         setError(data.message);
       }
-      navigate(`/listing/${data._id}`);
+      navigate(`/${data._id}`);
     } catch (error) {
       setError(error.message);
       setLoading(false);
     }
   };
   return (
+   
+
+    <div>
+    {isLoading ? (
+      <PreloaderComponent />
+    ) : (
+      <div>
+           <div className="new">
+    <Sidebar/>
+    <div className="newContainer">
+    <Navbar/>
     <main className='p-3 max-w-4xl mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>
         Create a Listing
@@ -367,5 +400,12 @@ export default function CreateListing() {
         </div>
       </form>
     </main>
-  );
-}
+    </div> 
+    </div>
+      </div>
+    )}
+  </div>
+);
+};
+
+    

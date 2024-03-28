@@ -1,8 +1,18 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import PreloaderComponent from '../Components/Pre-loader/Pre-loader.jsx';
 import { Link, useNavigate } from 'react-router-dom';
-import OAuth from '../Components/OAuth';
+// import OAuth from '../Components/OAuth';
 
 export default function SignUp() {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -40,6 +50,15 @@ export default function SignUp() {
     }
   };
   return (
+
+
+
+    <div>
+    {isLoading ? (
+      <PreloaderComponent />
+    ) : (
+      <div>
+
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign Up</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
@@ -71,7 +90,7 @@ export default function SignUp() {
         >
           {loading ? 'Loading...' : 'Sign Up'}
         </button>
-        <OAuth/>
+        {/* <OAuth/> */}
       
       </form>
       <div className='flex gap-2 mt-5'>
@@ -82,5 +101,12 @@ export default function SignUp() {
       </div>
       {error && <p className='text-red-500 mt-5'>{error}</p>}
     </div>
+      </div>
+    )}
+  </div>
+
+
+
+
   );
 }

@@ -1,0 +1,26 @@
+.table .cellWrapper {
+  display: flex;
+  align-items: center;
+}
+.table .cellWrapper .image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.table .status {
+  padding: 5px;
+  border-radius: 5px;
+}
+.table .status.EDIT {
+  color: rgb(0, 85, 128);
+  background-color: rgba(0, 128, 0, 0.151);
+  padding: 10px;
+  text-decoration: underline;
+}
+.table .status.Pending {
+  color: goldenrod;
+  background-color: rgba(189, 189, 3, 0.103);
+}/*# sourceMappingURL=table.css.map */

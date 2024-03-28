@@ -1,0 +1,52 @@
+import "./widget.scss"
+ const Widget = ({ type }) => {
+    let data;
+    // temporary
+    const amount= .0
+   
+    switch(type){
+        case"TOTAL APPOINTMENT":
+        data={
+            title:"TOTAL APPOINTMENT",
+            isMoney: 150,
+            link: "See all users",
+        };
+        break;
+        case"AVAILABLE DOCTORS":
+        data={
+            title:"AVAILABLE DOCTORS",
+            isMoney: 18,
+            link: "See all users",
+        };
+        break;
+        case"TODAY APPOINTMENTS":
+        data={
+            title:"TODAY APPOINTMENTS",
+            isMoney: 21,
+            link: "See all users",
+        };
+        break;
+        case"SURGERIES":
+        data={
+            title:"TODAY SURGERIES",
+            isMoney: 1,
+            link: "See all users",
+        };
+        break;
+        default:
+        break;
+    }
+      
+  return (
+    <div className="widget">
+        <div className="left">
+        <span className="title">{data.title}</span>
+        <span className="counter">{data.isMoney}{amount}</span>
+        <span className="link">{data.link}</span>
+        </div>
+        </div>
+  );
+  
+  }
+export default Widget;
+ 

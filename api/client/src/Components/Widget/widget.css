@@ -1,0 +1,39 @@
+.widget {
+  display: flex;
+  width: 200px;
+  flex: 2 2;
+  padding: 10px;
+  gap: 2px;
+  justify-content: space-between;
+  box-shadow: 0px 3px 19px -3px rgba(116, 81, 248, 0.75);
+  -webkit-box-shadow: 0px 3px 19px -3px rgba(116, 81, 248, 0.75);
+  -moz-box-shadow: 0px 3px 19px -3px rgba(116, 81, 248, 0.75);
+  border-radius: 10px;
+  height: 125px;
+}
+.widget .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 45px;
+  gap: 0px;
+}
+.widget .left .title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 0px;
+  margin-bottom: 13px;
+  color: rgb(181, 30, 30);
+}
+.widget .left .counter {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.widget .left .link {
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 12px;
+  margin-top: 0px;
+  border-bottom: 1px solid gray;
+}/*# sourceMappingURL=widget.css.map */
