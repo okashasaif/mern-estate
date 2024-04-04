@@ -1,4 +1,4 @@
-import "./sidebar.scss"
+import "./sidebar1.css"
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';

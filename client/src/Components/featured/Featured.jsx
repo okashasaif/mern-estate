@@ -1,4 +1,4 @@
-import "./featured.scss"
+import "./featured1.css"
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import React, { useEffect, useState } from 'react';
