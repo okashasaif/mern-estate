@@ -1,6 +1,6 @@
 import Navbar from "../Components/Navbar/Header.jsx"
 import Sidebar from "../Components/Sidebar/Sidebar.jsx";
-import "../pages/list/list.scss"
+import "../pages/list/list1.css"
 import { useState } from 'react';
 import React, { useEffect } from 'react';
 
