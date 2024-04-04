@@ -94,7 +94,7 @@ const Profile = () => {
       dispatch(deleteUserSuccess(data));
     } catch (error) {
       dispatch(deleteUserFailure(error.message));
-    }
+    }<Sidebar/>
   };
 
   const handleSignOut = async () => {
@@ -119,68 +119,58 @@ const Profile = () => {
       {isLoading ? (
         <PreloaderComponent />
       ) : (
-        <div>
-             <div className="home">
-       <Sidebar/>
-       <div className="homeContainer">
+        <div class="center">
+  <div>
+    <div className="home">
+      <Sidebar/>
+      <div className="homeContainer">
         <Navbar/>
-        <div class="flex">
-  </div>
-  <div class="w-1/2 bg-white-300 absolute right-60">
-  <div className='p-3 max-w-lg mx-auto'>  
-           
-           <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
-           <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-               <input onChange={(e)=>setFile(e.target.files[0])} hidden accept='image/*' type="file"  ref={fileRef}/>
-               <img
-         onClick={() => fileRef.current.click()}
-         src={formData?.avatar || currentUser.avatar}
-         alt='profile'
-         className='rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2'
-       />
-               <p className='text-sm self-center'>
-         {fileUploadError ? (
-           <span className='text-red-700'>
-             Error Image upload (image must be less than 2 mb)
-           </span>
-         ) : filePerc > 0 && filePerc < 100 ? (
-           <span className='text-slate-700'>{`Uploading ${filePerc}%`}</span>
-         ) : filePerc === 100 ? (
-           <span className='text-green-700'>Image successfully uploaded!</span>
-         ) : (
-           ''
-         )}
-       </p>
-               <input type="text" placeholder='username' onChange={handlechange}  defaultValue={currentUser.username} id='username' className='border p-3 rounded-lg'/>
-               <input type="email"  placeholder='email' onChange={handlechange} defaultValue={currentUser.email} id='email' className='border p-3 rounded-lg'/>
-               <input type="password" placeholder='password' onChange={handlechange} id='password' className='border p-3 rounded-lg'/>
-               <button disabled={loading} className='bg-slate-700 text-white rounded-lg p-3 
-               uppercase hover:opacity-98 disabled:opacity-80'>{loading ? 'loading......':'Update'}</button>
-               <Link className='bg-green-700 text-white p-3 
-               rounded-lg uppercase text-center hover: opacity-95' to={"/create-listing"}>
-                 Create Listings
-               </Link>
-<div className='flex justify-between mt-5'> 
-<span onClick={handleDeleteUser} className='text-red-700 cursor-pointer '>Delete Account</span>
-               <span onClick={handleSignOut} className='text-red-700 cursor-pointer '>Signout</span>
-</div>
-           </form>
-           <p className='text-red-700 mt-5'>{error ? error : ''}</p>
-           <p className='text-green-700 mt-5'>
-       {updateSuccess ? 'User is updated successfully!' : ''}
-     </p>
-       </div>
-  </div>
-</div>
-       </div>
+        <div class="w-full md:w-1/2 bg-white-300 relative md:static md:right-60 mx-auto md:ml-auto">
+          <div class="p-3 max-w-lg mx-auto">
+            <h1 class="text-3xl font-semibold text-center my-7">Profile</h1>
+            <form onSubmit={handleSubmit} class="flex flex-col gap-4">
+              <input onChange={(e)=>setFile(e.target.files[0])} hidden accept="image/*" type="file" ref={fileRef} />
+              <img
+                onClick={() => fileRef.current.click()}
+                src={formData?.avatar || currentUser.avatar}
+                alt="profile"
+                class="rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2"
+              />
+              <p class="text-sm self-center">
+                {fileUploadError ? (
+                  <span class="text-red-700">
+                    Error Image upload (image must be less than 2 mb)
+                  </span>
+                ) : filePerc > 0 && filePerc < 100 ? (
+                  <span class="text-slate-700">{`Uploading ${filePerc}%`}</span>
+                ) : filePerc === 100 ? (
+                  <span class="text-green-700">Image successfully uploaded!</span>
+                ) : (
+                  ""
+                )}
+              </p>
+              <input type="text" placeholder="username" onChange={handlechange} defaultValue={currentUser.username} id="username" class="border p-3 rounded-lg" />
+              <input type="email" placeholder="email" onChange={handlechange} defaultValue={currentUser.email} id="email" class="border p-3 rounded-lg" />
+              <input type="password" placeholder="password" onChange={handlechange} id="password" class="border p-3 rounded-lg" />
+              <button disabled={loading} class="bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-98 disabled:opacity-80">{loading ? 'loading......' : 'Update'}</button>
+              <Link class="bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95" to={"/create-listing"}>
+                Create Listings
+              </Link>
+              <div class="flex flex-col md:flex-row md:justify-between mt-5">
+                <span onClick={handleDeleteUser} class="text-red-700 cursor-pointer">Delete Account</span>
+                <span onClick={handleSignOut} class="text-red-700 cursor-pointer">Signout</span>
+              </div>
+            </form>
+            <p class="text-red-700 mt-5">{error ? error : ""}</p>
+            <p class="text-green-700 mt-5">{updateSuccess ? 'User is updated successfully!' : ''}</p>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
       )}
     </div>
-
-
-
-
-     
     );
 }
 export default Profile;

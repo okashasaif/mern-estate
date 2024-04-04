@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO)
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.listen(3000, () => {
+app.listen(5000, () => {
   console.log('SERVER IS USING PORT 3000!');
 });
 app.use('/api/user', userRouter);

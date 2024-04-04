@@ -40,7 +40,14 @@ const Featured = () => {
     </div>
     <div className="bottom ml-3">
       <div className="featuredChart mt-5">
-      <CircularProgressbar className="text-slate-700" value={100} text={data[`Solar Energy`]} strokeWidth={7} />
+      <CircularProgressbar className="gradient-progress" styles={{
+    path: {
+      stroke: '#2D3748', // Blue color
+    },text: {
+      fill: ' #2D3748', // Red color
+    },
+   
+  }} value={100} text={data[`Solar Energy`]} strokeWidth={7} />
       </div>
       <p className="pt-5 text-slate-500 text-lg font-bold">SOLAR UNITS</p>
       <p className="amount"></p>

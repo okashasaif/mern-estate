@@ -38,7 +38,7 @@ const FirebaseData = () => {
 </div>
 
 <div className="bg-gray-200 p-8 m-4 rounded-lg shadow-lg flex flex-col items-center justify-center">
-  <p className="text-xl font-semibold text-slate-600">REMAINING ENERGY</p>
+  <p className="text-xl font-semibold text-slate-600">UNITS LEFT</p>
   <span className="text-xl font-semibold text-red-800">{data[`Remaining Energy`]} UNITS</span>
 </div>
 

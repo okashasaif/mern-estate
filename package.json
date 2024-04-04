@@ -6,9 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon api/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node api/index.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "build": "npm install && npm install--prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
