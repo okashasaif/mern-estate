@@ -2,7 +2,7 @@
 import Sidebar from "../../Components/Sidebar/Sidebar.jsx";
 import Navbar from "../../Components/Navbar/Header.jsx";
 import Table from "../../Components/table/Table.jsx";
-import "./list.scss"
+import "./list1.css"
 import { useState } from "react";
 import React, { useEffect } from 'react';
 import PreloaderComponent from '../../Components/Pre-loader/Pre-loader.jsx';

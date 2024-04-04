@@ -1,24 +1,24 @@
 .new{
     display: flex;
-
-    .newContainer{
+}
+.newContainer{
         flex: 6;
     }
   
     
   
-      .listContainer {
+.listContainer {
         box-shadow: 0px 3px 19px -3px rgba(116,81,248,0.75);
         -webkit-box-shadow: 0px 3px 19px -3px rgba(116,81,248,0.75);
         -moz-box-shadow: 0px 3px 19px -3px rgba(116,81,248,0.75);
         padding: 20px;
         margin: 20px;
   
-        .listTitle {
-          font-weight: bolder;
-          color: rgb(77, 76, 76);
-          margin-bottom: 15px;
-        }
+    
       }
-    }
+.listTitle {
+        font-weight: bolder;
+        color: rgb(77, 76, 76);
+        margin-bottom: 15px;
+      }
   
